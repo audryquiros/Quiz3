@@ -5,7 +5,7 @@ import {
   useLocation,
 } from "react-router-dom";
 
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context/useAuth";
 
 import Home from "../pages/Home/Home.jsx";
 import CreateInvoiceForm from "../pages/CreateInvoiceForm/CreateInvoiceForm.jsx";

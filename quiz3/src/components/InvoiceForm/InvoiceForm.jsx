@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 import {
   obtenerFechaActual,
@@ -20,7 +20,7 @@ function InvoiceForm({ onSave, numeroFactura }) {
     impuesto: 13,
     items: [
       {
-        id: Date.now(),
+        id: "item-inicial",
         descripcion: "",
         cantidad: 1,
         precio: 0,
@@ -29,15 +29,6 @@ function InvoiceForm({ onSave, numeroFactura }) {
   });
 
   // Actualizar el número de factura automáticamente
-  useEffect(() => {
-    if (numeroFactura) {
-      setFormData((prev) => ({
-        ...prev,
-        numero: numeroFactura,
-      }));
-    }
-  }, [numeroFactura]);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -118,6 +109,7 @@ function InvoiceForm({ onSave, numeroFactura }) {
 
     const factura = {
       ...formData,
+      numero: numeroFactura,
       subtotal,
       impuestoMonto,
       total,

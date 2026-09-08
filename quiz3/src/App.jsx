@@ -1,7 +1,5 @@
 import { BrowserRouter, useLocation } from "react-router-dom";
-
-import { AuthProvider } from "./context/AuthContext";
-
+import AuthProvider from "./context/AuthProvider";
 import Navbar from "./components/NavBar/NavBar";
 import AppRouter from "./routes/AppRouter";
 

@@ -169,7 +169,7 @@
       "numero": "FAC-008",
       "fecha": "10/08/2026",
       "fechaVencimiento": "10/09/2026",
-      "pagada": false,
+      "pagada": true,
       "impuesto": 13,
       "items": [
         {

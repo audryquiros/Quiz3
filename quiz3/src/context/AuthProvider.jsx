@@ -1,6 +1,5 @@
-import { createContext, useContext, useState } from "react";
-
-const AuthContext = createContext();
+import { useState } from "react";
+import AuthContext from "./authContextValue.js";
 
 const usuarios = [
   {
@@ -15,7 +14,7 @@ const usuarios = [
   },
 ];
 
-export function AuthProvider({ children }) {
+function AuthProvider({ children }) {
   const [usuarioActual, setUsuarioActual] = useState(() => {
     const sesionGuardada = sessionStorage.getItem(
       "factuflow_usuario"
@@ -57,19 +56,17 @@ export function AuthProvider({ children }) {
     setUsuarioActual(null);
   };
 
+  const valorContexto = {
+    usuarioActual,
+    login,
+    logout,
+  };
+
   return (
-    <AuthContext.Provider
-      value={{
-        usuarioActual,
-        login,
-        logout,
-      }}
-    >
+    <AuthContext.Provider value={valorContexto}>
       {children}
     </AuthContext.Provider>
   );
 }
 
-export function useAuth() {
-  return useContext(AuthContext);
-}
+export default AuthProvider;
