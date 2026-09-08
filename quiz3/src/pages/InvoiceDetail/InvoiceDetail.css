@@ -6,7 +6,7 @@
 }
 
 .invoice-detail-container {
-  width: min(980px, calc(100% - 48px));
+  width: min(900px, 100%);
   margin: 0 auto;
 }
 
@@ -15,9 +15,6 @@
 ======================================== */
 
 .invoice-detail-back-container {
-  display: flex;
-  justify-content: flex-start;
-
   width: 100%;
   margin-bottom: 28px;
 }
@@ -125,7 +122,7 @@
   }
 
   .invoice-detail-container {
-    width: 90%;
+    width: 100%;
   }
 
   .invoice-detail-delete-container {

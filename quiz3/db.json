@@ -5,27 +5,6 @@
       "idFiscal": "15832946",
       "cliente": "Audry Quirós",
       "direccion": "Av, 2",
-      "numero": "FAC-002",
-      "fecha": "2026-09-07",
-      "impuesto": 13,
-      "items": [
-        {
-          "id": 1788846482160,
-          "descripcion": "Teclado",
-          "cantidad": 2,
-          "precio": 35
-        }
-      ],
-      "subtotal": 70,
-      "impuestoMonto": 9.1,
-      "total": 79.1,
-      "id": "g3Gi0zIASgI"
-    },
-    {
-      "empresa": "SweetMarie",
-      "idFiscal": "15832946",
-      "cliente": "Audry Quirós",
-      "direccion": "Av, 2",
       "numero": "FAC-003",
       "fecha": "08/09/2026",
       "impuesto": 13,
@@ -47,6 +26,33 @@
       "impuestoMonto": 26,
       "total": 226,
       "id": "rCmjsJbt7ng"
+    },
+    {
+      "empresa": "SweetMarie",
+      "idFiscal": "15832946",
+      "cliente": "Audry Quirós",
+      "direccion": "Av, 2",
+      "numero": "FAC-004",
+      "fecha": "08/09/2026",
+      "impuesto": 13,
+      "items": [
+        {
+          "id": 1788848276336,
+          "descripcion": "Plancha",
+          "cantidad": 1,
+          "precio": 25
+        },
+        {
+          "id": 1788848291445,
+          "descripcion": "Maquina de waffles",
+          "cantidad": 3,
+          "precio": 30
+        }
+      ],
+      "subtotal": 115,
+      "impuestoMonto": 14.950000000000001,
+      "total": 129.95,
+      "id": "n-1EmVEgSRU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
