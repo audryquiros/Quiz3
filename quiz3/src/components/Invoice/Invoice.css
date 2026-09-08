@@ -1,0 +1,159 @@
+.invoice {
+  width: min(900px, 90%);
+  margin: 40px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+  color: #2d2d2d;
+}
+
+/* ENCABEZADO */
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #eeeeee;
+}
+
+.invoice-company h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.invoice-company p {
+  margin: 0;
+  color: #777777;
+  font-size: 14px;
+}
+
+.invoice-title {
+  text-align: right;
+}
+
+.invoice-title span {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  color: #777777;
+  letter-spacing: 2px;
+}
+
+.invoice-title h2 {
+  margin: 5px 0 0;
+  font-size: 24px;
+}
+
+/* INFORMACIÓN DEL CLIENTE */
+
+.invoice-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 30px 0;
+}
+
+.invoice-client span,
+.invoice-date span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #777777;
+  letter-spacing: 1px;
+}
+
+.invoice-client h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.invoice-client p,
+.invoice-date p {
+  margin: 0;
+  color: #555555;
+}
+
+.invoice-date {
+  text-align: right;
+}
+
+/* TABLA */
+
+.invoice-items h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.invoice-items table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.invoice-items th {
+  padding: 12px;
+  background: #f5f5f5;
+  text-align: left;
+  font-size: 13px;
+  color: #555555;
+}
+
+.invoice-items td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 14px;
+}
+
+.invoice-items th:nth-child(2),
+.invoice-items th:nth-child(3),
+.invoice-items th:nth-child(4),
+.invoice-items td:nth-child(2),
+.invoice-items td:nth-child(3),
+.invoice-items td:nth-child(4) {
+  text-align: right;
+}
+
+/* TOTALES */
+
+.invoice-totals {
+  width: 320px;
+  margin: 30px 0 0 auto;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 15px;
+}
+
+.total-final {
+  margin-top: 10px;
+  padding-top: 15px;
+  border-top: 2px solid #222222;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* PIE */
+
+.invoice-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eeeeee;
+  text-align: center;
+  color: #888888;
+  font-size: 13px;
+}
+
+/* CARGANDO */
+
+.invoice-loading {
+  width: min(900px, 90%);
+  margin: 40px auto;
+  padding: 40px;
+  text-align: center;
+}

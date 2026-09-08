@@ -1,0 +1,50 @@
+{
+  "facturas": [
+    {
+      "empresa": "TechStore S.A.",
+      "idFiscal": "123456789",
+      "cliente": "Juan Pérez",
+      "direccion": "San José",
+      "numero": "FAC-001",
+      "fecha": "2026-09-07",
+      "impuesto": 13,
+      "items": [
+        {
+          "id": 1788842991161,
+          "descripcion": "teclado",
+          "cantidad": "2",
+          "precio": "25"
+        },
+        {
+          "id": 1788843068320,
+          "descripcion": "monitor",
+          "cantidad": 1,
+          "precio": "30"
+        }
+      ],
+      "id": "Ml24nWIBIx0"
+    },
+    {
+      "empresa": "SweetMarie",
+      "idFiscal": "15832946",
+      "cliente": "Audry Quirós",
+      "direccion": "Av, 2",
+      "numero": "FAC-002",
+      "fecha": "2026-09-07",
+      "impuesto": 13,
+      "items": [
+        {
+          "id": 1788846482160,
+          "descripcion": "Teclado",
+          "cantidad": 2,
+          "precio": 35
+        }
+      ],
+      "subtotal": 70,
+      "impuestoMonto": 9.1,
+      "total": 79.1,
+      "id": "g3Gi0zIASgI"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
