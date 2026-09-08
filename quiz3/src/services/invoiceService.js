@@ -35,3 +35,15 @@
 
     return response.json();
   };
+
+  export const deleteFactura = async (id) => {
+  const response = await fetch(`${API_URL}/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!response.ok) {
+    throw new Error("Error al eliminar la factura");
+  }
+
+  return true;
+};
