@@ -47,3 +47,19 @@
 
   return true;
 };
+
+export const updateFactura = async (id, datos) => {
+  const response = await fetch(`${API_URL}/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(datos),
+  });
+
+  if (!response.ok) {
+    throw new Error("Error al actualizar la factura");
+  }
+
+  return response.json();
+};

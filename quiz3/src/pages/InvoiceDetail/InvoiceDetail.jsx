@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import { useNavigate, useParams } from "react-router-dom";
 
 import Invoice from "../../components/Invoice/Invoice";
@@ -6,7 +7,10 @@ import Invoice from "../../components/Invoice/Invoice";
 import {
   getFactura,
   deleteFactura,
+  updateFactura,
 } from "../../services/invoiceService";
+
+import { obtenerEstadoFactura } from "../../utils/invoiceUtils";
 
 import "./InvoiceDetail.css";
 
@@ -16,6 +20,7 @@ function InvoiceDetail() {
 
   const [factura, setFactura] = useState(null);
   const [eliminando, setEliminando] = useState(false);
+  const [actualizandoEstado, setActualizandoEstado] = useState(false);
 
   useEffect(() => {
     const cargarFactura = async () => {
@@ -35,6 +40,29 @@ function InvoiceDetail() {
 
   const handleBack = () => {
     navigate("/");
+  };
+
+  const handleMarkAsPaid = async () => {
+    try {
+      setActualizandoEstado(true);
+
+      const facturaActualizada = await updateFactura(id, {
+        pagada: true,
+      });
+
+      setFactura(facturaActualizada);
+    } catch (error) {
+      console.error(
+        "Error al actualizar el estado:",
+        error
+      );
+
+      alert(
+        "No se pudo actualizar el estado de la factura. Inténtalo nuevamente."
+      );
+    } finally {
+      setActualizandoEstado(false);
+    }
   };
 
   const handleDelete = async () => {
@@ -78,12 +106,13 @@ function InvoiceDetail() {
     );
   }
 
+  const estado = obtenerEstadoFactura(factura);
+
   return (
     <main className="invoice-detail-page">
       <div className="invoice-detail-container">
 
         {/* BOTÓN VOLVER */}
-
         <div className="invoice-detail-back-container">
           <button
             className="invoice-detail-back-button"
@@ -94,12 +123,38 @@ function InvoiceDetail() {
           </button>
         </div>
 
-        {/* FACTURA */}
+        {/* ESTADO DE LA FACTURA */}
+        <section className="invoice-status-card">
+          <div className="invoice-status-info">
+            <span className="invoice-status-label">
+              Estado de la factura
+            </span>
 
+            <strong
+              className={`invoice-status invoice-status-${estado.toLowerCase()}`}
+            >
+              {estado}
+            </strong>
+          </div>
+
+          {estado !== "Pagada" && (
+            <button
+              className="invoice-paid-button"
+              type="button"
+              onClick={handleMarkAsPaid}
+              disabled={actualizandoEstado}
+            >
+              {actualizandoEstado
+                ? "Actualizando..."
+                : "Marcar como pagada"}
+            </button>
+          )}
+        </section>
+
+        {/* FACTURA */}
         <Invoice factura={factura} />
 
         {/* BOTÓN ELIMINAR */}
-
         <div className="invoice-detail-delete-container">
           <button
             className="invoice-detail-delete-button"

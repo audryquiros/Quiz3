@@ -1,54 +1,67 @@
 import { useNavigate } from "react-router-dom";
-import "./Navbar.css";
+import { useAuth } from "../../context/AuthContext";
 
-function Navbar() {
+import "./NavBar.css";
+
+function NavBar() {
   const navigate = useNavigate();
+  const { usuarioActual, logout } = useAuth();
 
-  const goHome = () => {
-    navigate("/");
-  };
-
-  const goCreateInvoice = () => {
-    navigate("/crear");
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
   };
 
   return (
-    <nav className="navbar">
-      <div className="navbar-content">
+    <header className="navbar">
+      <div
+        className="navbar-brand"
+        onClick={() => navigate("/")}
+      >
+        <img
+          src="/logo.png"
+          alt="FactuFlow"
+          className="navbar-logo"
+        />
+
+        <div className="navbar-brand-text">
+          <span className="navbar-name">FactuFlow</span>
+          <span className="navbar-description">
+            Gestión de facturas
+          </span>
+        </div>
+      </div>
+
+      <nav className="navbar-actions">
+
+        {usuarioActual?.rol === "admin" && (
+          <button
+            className="navbar-button"
+            type="button"
+            onClick={() => navigate("/admin")}
+          >
+            Panel administrativo
+          </button>
+        )}
 
         <button
-          className="navbar-brand"
-          onClick={goHome}
+          className="navbar-button"
           type="button"
-        >
-          <img
-            src="/logo.png"
-            alt="FactuFlow"
-            className="navbar-logo"
-          />
-
-          <div className="navbar-brand-text">
-            <span className="navbar-name">
-              FactuFlow
-            </span>
-
-            <span className="navbar-description">
-              Gestión de facturas
-            </span>
-          </div>
-        </button>
-
-        <button
-          className="navbar-create"
-          onClick={goCreateInvoice}
-          type="button"
+          onClick={() => navigate("/crear")}
         >
           Nueva factura
         </button>
 
-      </div>
-    </nav>
+        <button
+          className="navbar-logout"
+          type="button"
+          onClick={handleLogout}
+        >
+          Cerrar sesión
+        </button>
+      </nav>
+    </header>
   );
 }
 
-export default Navbar;
+export default NavBar;

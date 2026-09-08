@@ -1,15 +1,32 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, useLocation } from "react-router-dom";
+
+import { AuthProvider } from "./context/AuthContext";
 
 import Navbar from "./components/NavBar/NavBar";
 import AppRouter from "./routes/AppRouter";
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+
+  const mostrarNavbar =
+    location.pathname !== "/login";
+
   return (
-    <BrowserRouter>
-      <Navbar />
+    <>
+      {mostrarNavbar && <Navbar />}
 
       <AppRouter />
-    </BrowserRouter>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <BrowserRouter>
+        <AppContent />
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 

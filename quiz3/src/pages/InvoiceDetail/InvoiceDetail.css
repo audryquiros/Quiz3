@@ -112,6 +112,94 @@
   text-align: center;
 }
 
+.invoice-status-card {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.invoice-status-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.invoice-status-label {
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.invoice-status {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.invoice-status-pagada {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.invoice-status-pendiente {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.invoice-status-vencida {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.invoice-paid-button {
+  padding: 9px 14px;
+  border: none;
+  border-radius: 7px;
+  background: #4f46e5;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.invoice-paid-button:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+.invoice-paid-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 600px) {
+  .invoice-status-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .invoice-status-info {
+    flex-wrap: wrap;
+  }
+
+  .invoice-paid-button {
+    width: 100%;
+  }
+}
+
 /* ========================================
    RESPONSIVE
 ======================================== */
@@ -133,3 +221,4 @@
     width: 100%;
   }
 }
+

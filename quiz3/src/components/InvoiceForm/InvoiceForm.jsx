@@ -1,16 +1,11 @@
 import { useEffect, useState } from "react";
+
+import {
+  obtenerFechaActual,
+  obtenerFechaVencimiento,
+} from "../../utils/invoiceUtils";
+
 import "./InvoiceForm.css";
-
-// Obtener la fecha actual
-const obtenerFechaActual = () => {
-  const hoy = new Date();
-
-  const dia = String(hoy.getDate()).padStart(2, "0");
-  const mes = String(hoy.getMonth() + 1).padStart(2, "0");
-  const año = hoy.getFullYear();
-
-  return `${dia}/${mes}/${año}`;
-};
 
 function InvoiceForm({ onSave, numeroFactura }) {
   const [formData, setFormData] = useState({
@@ -20,6 +15,8 @@ function InvoiceForm({ onSave, numeroFactura }) {
     direccion: "",
     numero: "",
     fecha: obtenerFechaActual(),
+    fechaVencimiento: obtenerFechaVencimiento(30),
+    pagada: false,
     impuesto: 13,
     items: [
       {
@@ -135,7 +132,6 @@ function InvoiceForm({ onSave, numeroFactura }) {
       onSubmit={handleSubmit}
     >
       {/* INFORMACIÓN DE LA FACTURA */}
-
       <div className="invoice-meta">
         <div className="invoice-meta-item">
           <span className="invoice-meta-label">
@@ -156,10 +152,19 @@ function InvoiceForm({ onSave, numeroFactura }) {
             {formData.fecha}
           </strong>
         </div>
+
+        <div className="invoice-meta-item">
+          <span className="invoice-meta-label">
+            Fecha de vencimiento
+          </span>
+
+          <strong className="invoice-meta-value">
+            {formData.fechaVencimiento}
+          </strong>
+        </div>
       </div>
 
       {/* DATOS DEL EMISOR */}
-
       <h2 className="form-section-title">
         Datos del emisor
       </h2>
@@ -191,7 +196,6 @@ function InvoiceForm({ onSave, numeroFactura }) {
       </div>
 
       {/* DATOS DEL CLIENTE */}
-
       <h2 className="form-section-title">
         Datos del cliente
       </h2>
@@ -223,7 +227,6 @@ function InvoiceForm({ onSave, numeroFactura }) {
       </div>
 
       {/* ÍTEMS DE LA FACTURA */}
-
       <h2 className="form-section-title">
         Ítems de la factura
       </h2>
@@ -302,7 +305,6 @@ function InvoiceForm({ onSave, numeroFactura }) {
       </div>
 
       {/* AGREGAR PRODUCTO */}
-
       <button
         className="add-item-button"
         type="button"
@@ -312,7 +314,6 @@ function InvoiceForm({ onSave, numeroFactura }) {
       </button>
 
       {/* RESUMEN */}
-
       <div className="invoice-summary">
         <div className="summary-row">
           <span>Subtotal</span>
@@ -342,7 +343,6 @@ function InvoiceForm({ onSave, numeroFactura }) {
       </div>
 
       {/* IMPUESTO Y GUARDAR */}
-
       <div className="form-footer">
         <div className="tax-container">
           <div className="form-group tax-field">

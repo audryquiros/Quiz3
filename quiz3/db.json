@@ -1,58 +1,188 @@
 {
   "facturas": [
     {
-      "empresa": "SweetMarie",
-      "idFiscal": "15832946",
-      "cliente": "Audry Quirós",
-      "direccion": "Av, 2",
-      "numero": "FAC-003",
-      "fecha": "08/09/2026",
+      "empresa": "TechStore",
+      "idFiscal": "101010101",
+      "cliente": "Carlos Méndez",
+      "direccion": "San José, Costa Rica",
+      "numero": "FAC-001",
+      "fecha": "15/05/2026",
+      "fechaVencimiento": "15/06/2026",
+      "pagada": true,
       "impuesto": 13,
       "items": [
         {
-          "id": 1788847853608,
-          "descripcion": "Licuadora",
+          "id": 1001,
+          "descripcion": "Teclado mecánico",
           "cantidad": 1,
-          "precio": 50
-        },
-        {
-          "id": 1788847877725,
-          "descripcion": "Batidora",
-          "cantidad": 2,
-          "precio": 75
+          "precio": 159.29
         }
       ],
-      "subtotal": 200,
-      "impuestoMonto": 26,
-      "total": 226,
-      "id": "rCmjsJbt7ng"
+      "subtotal": 159.29,
+      "impuestoMonto": 20.71,
+      "total": 180,
+      "id": "fac-001"
     },
     {
-      "empresa": "SweetMarie",
-      "idFiscal": "15832946",
-      "cliente": "Audry Quirós",
-      "direccion": "Av, 2",
-      "numero": "FAC-004",
-      "fecha": "08/09/2026",
+      "empresa": "TechStore",
+      "idFiscal": "101010101",
+      "cliente": "María Rodríguez",
+      "direccion": "Heredia, Costa Rica",
+      "numero": "FAC-002",
+      "fecha": "20/05/2026",
+      "fechaVencimiento": "20/06/2026",
+      "pagada": true,
       "impuesto": 13,
       "items": [
         {
-          "id": 1788848276336,
-          "descripcion": "Plancha",
+          "id": 1002,
+          "descripcion": "Mouse inalámbrico",
           "cantidad": 1,
-          "precio": 25
-        },
-        {
-          "id": 1788848291445,
-          "descripcion": "Maquina de waffles",
-          "cantidad": 3,
-          "precio": 30
+          "precio": 185.84
         }
       ],
-      "subtotal": 115,
-      "impuestoMonto": 14.950000000000001,
-      "total": 129.95,
-      "id": "n-1EmVEgSRU"
+      "subtotal": 185.84,
+      "impuestoMonto": 24.16,
+      "total": 210,
+      "id": "fac-002"
+    },
+    {
+      "empresa": "TechStore",
+      "idFiscal": "101010101",
+      "cliente": "Carlos Méndez",
+      "direccion": "San José, Costa Rica",
+      "numero": "FAC-003",
+      "fecha": "10/06/2026",
+      "fechaVencimiento": "10/07/2026",
+      "pagada": false,
+      "impuesto": 13,
+      "items": [
+        {
+          "id": 1003,
+          "descripcion": "Audífonos",
+          "cantidad": 1,
+          "precio": 172.57
+        }
+      ],
+      "subtotal": 172.57,
+      "impuestoMonto": 22.43,
+      "total": 195,
+      "id": "fac-003"
+    },
+    {
+      "empresa": "TechStore",
+      "idFiscal": "101010101",
+      "cliente": "Empresa Corporativa CR",
+      "direccion": "Escazú, Costa Rica",
+      "numero": "FAC-004",
+      "fecha": "15/06/2026",
+      "fechaVencimiento": "15/07/2026",
+      "pagada": false,
+      "impuesto": 13,
+      "items": [
+        {
+          "id": 1004,
+          "descripcion": "Computadora portátil",
+          "cantidad": 1,
+          "precio": 2168.14
+        }
+      ],
+      "subtotal": 2168.14,
+      "impuestoMonto": 281.86,
+      "total": 2450,
+      "id": "fac-004"
+    },
+    {
+      "empresa": "TechStore",
+      "idFiscal": "101010101",
+      "cliente": "Ana Vargas",
+      "direccion": "Alajuela, Costa Rica",
+      "numero": "FAC-005",
+      "fecha": "05/07/2026",
+      "fechaVencimiento": "05/08/2026",
+      "pagada": false,
+      "impuesto": 13,
+      "items": [
+        {
+          "id": 1005,
+          "descripcion": "Monitor",
+          "cantidad": 1,
+          "precio": 194.69
+        }
+      ],
+      "subtotal": 194.69,
+      "impuestoMonto": 25.31,
+      "total": 220,
+      "id": "fac-005"
+    },
+    {
+      "empresa": "TechStore",
+      "idFiscal": "101010101",
+      "cliente": "María Rodríguez",
+      "direccion": "Heredia, Costa Rica",
+      "numero": "FAC-006",
+      "fecha": "12/07/2026",
+      "fechaVencimiento": "12/08/2026",
+      "pagada": true,
+      "impuesto": 13,
+      "items": [
+        {
+          "id": 1006,
+          "descripcion": "Webcam",
+          "cantidad": 1,
+          "precio": 154.87
+        }
+      ],
+      "subtotal": 154.87,
+      "impuestoMonto": 20.13,
+      "total": 175,
+      "id": "fac-006"
+    },
+    {
+      "empresa": "TechStore",
+      "idFiscal": "101010101",
+      "cliente": "Carlos Méndez",
+      "direccion": "San José, Costa Rica",
+      "numero": "FAC-007",
+      "fecha": "01/08/2026",
+      "fechaVencimiento": "01/09/2026",
+      "pagada": false,
+      "impuesto": 13,
+      "items": [
+        {
+          "id": 1007,
+          "descripcion": "Teclado inalámbrico",
+          "cantidad": 1,
+          "precio": 181.42
+        }
+      ],
+      "subtotal": 181.42,
+      "impuestoMonto": 23.58,
+      "total": 205,
+      "id": "fac-007"
+    },
+    {
+      "empresa": "TechStore",
+      "idFiscal": "101010101",
+      "cliente": "Ana Vargas",
+      "direccion": "Alajuela, Costa Rica",
+      "numero": "FAC-008",
+      "fecha": "10/08/2026",
+      "fechaVencimiento": "10/09/2026",
+      "pagada": false,
+      "impuesto": 13,
+      "items": [
+        {
+          "id": 1008,
+          "descripcion": "Mouse gamer",
+          "cantidad": 1,
+          "precio": 168.14
+        }
+      ],
+      "subtotal": 168.14,
+      "impuestoMonto": 21.86,
+      "total": 190,
+      "id": "fac-008"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

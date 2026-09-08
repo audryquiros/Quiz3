@@ -1,0 +1,104 @@
+.status-panel {
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.status-panel-header {
+  margin-bottom: 20px;
+}
+
+.status-panel-header h2 {
+  margin: 0 0 6px;
+  color: #1f2937;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.status-panel-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.status-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.status-card {
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.status-card-label {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status-card-value {
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.status-card-description {
+  font-size: 11px;
+}
+
+/* PAGADAS */
+.status-paid {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.status-paid .status-card-label,
+.status-paid .status-card-value {
+  color: #15803d;
+}
+
+.status-paid .status-card-description {
+  color: #4d7c5c;
+}
+
+/* PENDIENTES */
+.status-pending {
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.status-pending .status-card-label,
+.status-pending .status-card-value {
+  color: #b45309;
+}
+
+.status-pending .status-card-description {
+  color: #92713c;
+}
+
+/* VENCIDAS */
+.status-overdue {
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.status-overdue .status-card-label,
+.status-overdue .status-card-value {
+  color: #dc2626;
+}
+
+.status-overdue .status-card-description {
+  color: #a45a5a;
+}
+
+@media (max-width: 650px) {
+  .status-cards {
+    grid-template-columns: 1fr;
+  }
+}
